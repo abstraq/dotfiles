@@ -1,0 +1,19 @@
+[manager]
+ratio = [0, 2, 4]
+sort_by = "natural"
+sort_dir_first = true
+linemode = "none"
+show_hidden = true
+show_symlink = true
+scrolloff = 5
+mouse_events = ["click", "scroll"]
+
+[[plugin.prepend_fetchers]]
+id = "git"
+name = "*"
+run = "git"
+
+[[plugin.prepend_fetchers]]
+id = "git"
+name = "*/"
+run = "git"
