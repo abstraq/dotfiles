@@ -1,8 +1,11 @@
-export TERM="tmux-256color"
-export EDITOR=nvim
-export VISUAL=nvim
-export ZSH_CACHE="$HOME/.local/state/zsh/cache"
-export GPG_TTY=$(tty)
+# XDG Base Directories
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_STATE_HOME="$HOME/.local/state"
 
+# Make neovim the default editor.
+export EDITOR="$(which nvim)"
+export VISUAL="$EDITOR"
 
 . "$HOME/.cargo/env"
