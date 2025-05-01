@@ -2,8 +2,8 @@
 [ -f "${XDG_DATA_HOME:-$HOME/.local/share}/zap/zap.zsh" ] && source "${XDG_DATA_HOME:-$HOME/.local/share}/zap/zap.zsh"
 
 # History Configuration
-HISTSIZE=5000
 HISTFILE="$ZSH_CACHE/.zsh_history"
+HISTSIZE=5000
 SAVEHIST=5000
 HISTDUP=erase
 setopt APPENDHISTORY
