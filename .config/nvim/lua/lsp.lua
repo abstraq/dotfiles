@@ -1,19 +1,3 @@
--- Enables all language servers that have been configured in the /lsp folder.
-local lsp_path = vim.fn.stdpath("config") .. "/lsp/"
-local configured_lsps = {}
-if vim.fn.isdirectory(lsp_path) == 1 then
-	for _, file in ipairs(vim.fn.glob(lsp_path .. "*.lua", false, true)) do
-		if vim.fn.isdirectory(file) == 0 then
-			local filename = file:match("([^/]+)%.lua$")
-			if filename then
-				table.insert(configured_lsps, filename)
-			end
-		end
-	end
-end
-
-vim.lsp.enable(configured_lsps)
-
 vim.api.nvim_create_autocmd("LspAttach", {
 	group = vim.api.nvim_create_augroup("lsp-attach", { clear = true }),
 	callback = function(event)

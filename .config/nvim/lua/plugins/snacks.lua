@@ -13,14 +13,14 @@ return {
 	},
 	keys = {
 		{
-			"<leader><leader>",
+			"<leader>f",
 			function()
 				Snacks.picker.files()
 			end,
 			desc = "File search in the current workspace.",
 		},
 		{
-			"<leader>/",
+			"<leader><leader>",
 			function()
 				Snacks.picker.grep()
 			end,
