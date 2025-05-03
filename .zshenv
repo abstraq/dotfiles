@@ -8,4 +8,11 @@ export XDG_STATE_HOME="$HOME/.local/state"
 export EDITOR="$(which nvim)"
 export VISUAL="$EDITOR"
 
+# Enable pnpm
+export PNPM_HOME="/home/joshw/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+
 . "$HOME/.cargo/env"
