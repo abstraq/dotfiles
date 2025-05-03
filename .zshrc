@@ -2,7 +2,7 @@
 [ -f "${XDG_DATA_HOME:-$HOME/.local/share}/zap/zap.zsh" ] && source "${XDG_DATA_HOME:-$HOME/.local/share}/zap/zap.zsh"
 
 # History Configuration
-HISTFILE="$ZSH_CACHE/.zsh_history"
+HISTFILE="$XDG_CACHE_HOME/.zsh_history"
 HISTSIZE=5000
 SAVEHIST=5000
 HISTDUP=erase
@@ -25,10 +25,11 @@ alias dot="cd ~/.dotfiles"
 alias nvimrc="cd ~/.dotfiles/.config/nvim"
 
 # Initialize completions
-autoload -Uz compinit && compinit -d "$ZSH_CACHE/.zcompdump"
+autoload -Uz compinit && compinit -d "$XDG_CACHE_HOME/.zcompdump"
 
 # Setup zoxide(cd)
 eval "$(zoxide init zsh --cmd cd)"
 
 # Prompt Configuration
 eval "$(starship init zsh)"
+

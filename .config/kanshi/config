@@ -3,6 +3,6 @@ output DP-2 alias $leftVerticalMonitor
 
 profile default {
 	output $primaryMonitor mode 2560x1440@144Hz 
-	output $leftVerticalMonitor mode 1920x1080 transform "270" position -1080,-172
+	output $leftVerticalMonitor mode 1920x1080 transform "270" position -1080,-320
 }
 

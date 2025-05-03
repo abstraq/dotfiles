@@ -101,6 +101,11 @@ riverctl rule-add ssd
 # Newly spawned views should be at the top of the stack.
 riverctl default-attach-mode below
 
+# Ensure XDG Desktop Portal is configured properly
+systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
+dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=river
+systemctl --user restart xdg-desktop-portal
+
 # Set the default layout generator to be wideriver and start it.
 # River will send the process group of the init executable SIGTERM on exit.
 riverctl default-layout wideriver
