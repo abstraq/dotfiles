@@ -1,8 +1,8 @@
 -- mason.nvim (Package Manager)
--- https://github.com/williamboman/mason.nvim
+-- https://github.com/mason-org/mason.nvim
 return {
 	{
-		"williamboman/mason.nvim",
+		"mason-org/mason.nvim",
 		opts = {
 			ui = {
 				icons = {
@@ -14,9 +14,9 @@ return {
 		},
 	},
 	{
-		"williamboman/mason-lspconfig.nvim",
+		"mason-org/mason-lspconfig.nvim",
 		dependencies = {
-			"williamboman/mason.nvim",
+			"mason-org/mason.nvim",
 			"neovim/nvim-lspconfig",
 		},
 		opts = {
