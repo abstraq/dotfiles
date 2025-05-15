@@ -1,6 +1,8 @@
 return {
 	settings = {
-		rustfmt = { extraArgs = { "+nightly" } },
-		check = { command = "clippy" },
+		["rust-analyzer"] = {
+			rustfmt = { extraArgs = { "+nightly" } },
+			check = { command = "clippy" },
+		}
 	}
 }
