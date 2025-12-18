@@ -14,34 +14,40 @@ return {
 		require("mason-lspconfig").setup(opts)
 		local fzf = require("fzf-lua")
 
-		-- vim.api.nvim_create_autocmd("LspAttach", {
-		-- 	callback = function(event)
-		-- 		vim.keymap.set(
-		-- 			"n",
-		-- 			"<leader>s",
-		-- 			fzf.lsp_document_symbols,
-		-- 			{ buffer = event.buf, desc = "View LSP symbols in the current buffer." }
-		-- 		)
-		-- 		vim.keymap.set(
-		-- 			"n",
-		-- 			"<leader>S",
-		-- 			fzf.lsp_workspace_symbols,
-		-- 			{ buffer = event.buf, desc = "View LSP symbols in the current workspace." }
-		-- 		)
-		-- 		vim.keymap.set(
-		-- 			"n",
-		-- 			"<leader>d",
-		-- 			fzf.lsp_document_diagnostics,
-		-- 			{ buffer = event.buf, desc = "View LSP diagnostics in the current buffer." }
-		-- 		)
-		-- 		vim.keymap.set(
-		-- 			"n",
-		-- 			"<leader>D",
-		-- 			fzf.lsp_workspace_diagnostics,
-		-- 			{ buffer = event.buf, desc = "View LSP diagnostics in the current workspace." }
-		-- 		)
-		-- 	end,
-		-- })
+		vim.api.nvim_create_autocmd("LspAttach", {
+			callback = function(event)
+				vim.keymap.set(
+					"n",
+					"<leader>s",
+					fzf.lsp_document_symbols,
+					{ buffer = event.buf, desc = "View LSP symbols in the current buffer." }
+				)
+				vim.keymap.set(
+					"n",
+					"<leader>S",
+					fzf.lsp_workspace_symbols,
+					{ buffer = event.buf, desc = "View LSP symbols in the current workspace." }
+				)
+				vim.keymap.set(
+					"n",
+					"<leader>d",
+					fzf.lsp_document_diagnostics,
+					{ buffer = event.buf, desc = "View LSP diagnostics in the current buffer." }
+				)
+				vim.keymap.set(
+					"n",
+					"<leader>D",
+					fzf.lsp_workspace_diagnostics,
+					{ buffer = event.buf, desc = "View LSP diagnostics in the current workspace." }
+				)
+				vim.keymap.set(
+					"n",
+					"<leader>r",
+					vim.lsp.buf.rename,
+					{ buffer = event.buf, desc = "Rename the symbol under the cursor." }
+				)
+			end,
+		})
 
 		vim.diagnostic.config({
 			severity_sort = true,
