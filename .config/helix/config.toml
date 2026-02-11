@@ -1,0 +1,27 @@
+theme = "catppuccin_macchiato"
+
+[editor]
+line-number = "relative"
+mouse = false
+cursorline = true
+color-modes = true
+end-of-line-diagnostics = "hint"
+scrolloff = 10
+preview-completion-insert = false
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.statusline]
+mode = { normal = "N", insert = "I", select = "S" }
+left = ["mode", "spacer", "diagnostics", "spacer", "version-control"]
+center = ["file-name", "read-only-indicator", "file-modification-indicator"]
+right = ["spinner", "selections", "register", "position", "file-encoding"]
+
+[editor.lsp]
+display-progress-messages = true
+
+[editor.inline-diagnostics]
+cursor-line = "warning"
